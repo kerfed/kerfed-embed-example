@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block head %}
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.0.4/iframeResizer.min.js"
+></script>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="jumbotron p-3 p-md-5 text-white bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4">
+        Instant Quotes
+      </h1>
+      <p class="lead my-3">
+        Powered by the <a href="https://kerfed.com">Kerfed Engine.</a>
+      </p>
+    </div>
+    <div>
+      <iframe
+        src="https://kerfed.com/shop/leland"
+        frameborder="0"
+        width="100%"
+        scrolling="no"
+      ></iframe>
+      <script>
+        iFrameResize({ heightCalculationMethod: "taggedElement" });
+      </script>
+    </div>
+  </div>
+</div>
+{% endblock %}

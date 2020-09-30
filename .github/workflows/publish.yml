@@ -1,0 +1,23 @@
+name: Publish Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  docs:
+    name: Build Docs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Static Site
+      run: |
+         pip install -r requirements.txt
+         python build.py
+    - name: Deploy To Github Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./html
+        force_orphan: true
