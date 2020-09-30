@@ -12,6 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build Static Site
+      env:
+        KERFED_API_KEY: ${{ secrets.KERFED_API_KEY }}  
       run: |
          pip3 install -r requirements.txt
          python3 build.py
