@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Static Site
       run: |
-         pip install -r requirements.txt
-         python build.py
+         pip3 install -r requirements.txt
+         python3 build.py
     - name: Deploy To Github Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
